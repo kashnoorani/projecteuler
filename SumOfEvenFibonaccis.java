@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import java.util.function.LongPredicate;
 import java.util.stream.LongStream;
 
-import static com.kash.codingpuzzles.test.Test.measure;
+import static test.Test.measure;
 import static java.lang.Math.*;
 
 /**

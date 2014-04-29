@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
-import static com.kash.codingpuzzles.test.Test.measure;
+import static test.Test.measure;
 
 /**
  * Source: http://projecteuler.net/problem=1

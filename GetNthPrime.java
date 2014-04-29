@@ -2,10 +2,10 @@ package projecteuler;
 
 import org.testng.annotations.Test;
 
-import static com.kash.codingpuzzles.test.Test.measure;
 import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
 import static org.testng.Assert.assertEquals;
+import static test.Test.measure;
 
 /**
  * Source: http://projecteuler.net/problem=7

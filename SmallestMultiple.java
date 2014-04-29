@@ -3,10 +3,10 @@ package projecteuler;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import static com.kash.codingpuzzles.test.Test.measure;
 import static org.testng.Assert.assertEquals;
+import static test.Test.measure;
+
 
 /**
  * Source: http://projecteuler.net/problem=5

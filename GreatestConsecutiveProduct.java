@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-import static com.kash.codingpuzzles.test.Test.measure;
 import static java.lang.Integer.parseInt;
 import static java.lang.String.valueOf;
 import static org.testng.Assert.assertEquals;
+import static test.Test.measure;
 
 /**
  * Source: http://projecteuler.net/problem=8

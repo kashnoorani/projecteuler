@@ -2,9 +2,9 @@ package projecteuler;
 
 import org.testng.annotations.Test;
 
-import static com.kash.codingpuzzles.test.Test.measureAndAssertEquals;
 import static java.lang.Math.pow;
 import static java.lang.Math.sqrt;
+import static test.Test.measureAndAssertEquals;
 
 /**
  * Source: http://projecteuler.net/problem=9
