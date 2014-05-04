@@ -4,8 +4,7 @@ import org.testng.annotations.Test;
 
 import static java.lang.Math.round;
 import static java.lang.Math.sqrt;
-import static org.testng.Assert.assertEquals;
-import static test.Test.measure;
+import static test.Test.measureAndAssertEquals;
 
 /**
  * Source: http://projecteuler.net/problem=3
@@ -17,15 +16,11 @@ public class LargestPrimeFactor
   @Test
   public void test()
   {
-    assertEquals( largestPrimeFactor1( 13195 ), 29 );
-    measure( o -> largestPrimeFactor1( 13195 ) );
-    assertEquals( largestPrimeFactor1( 600851475143L ), 6857 );
-    measure( o -> largestPrimeFactor1( 600851475143L ) );
+    measureAndAssertEquals( o -> largestPrimeFactor1( 13195 ), 29 );
+    measureAndAssertEquals( o -> largestPrimeFactor1( 600851475143L ), 6857 );
 
-    assertEquals( largestPrimeFactor2( 13195 ), 29 );
-    measure( o -> largestPrimeFactor2( 13195 ) );
-    assertEquals( largestPrimeFactor2( 600851475143L ), 6857 );
-    measure( o -> largestPrimeFactor2( 600851475143L ) );
+    measureAndAssertEquals( o -> largestPrimeFactor2( 13195 ), 29 );
+    measureAndAssertEquals( o -> largestPrimeFactor2( 600851475143L ), 6857 );
   }
 
   private long largestPrimeFactor1( long n )

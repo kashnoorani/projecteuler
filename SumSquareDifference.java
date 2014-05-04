@@ -4,8 +4,7 @@ import org.testng.annotations.Test;
 
 import static java.lang.Math.pow;
 import static java.util.stream.IntStream.range;
-import static org.testng.Assert.assertEquals;
-import static test.Test.measure;
+import static test.Test.measureAndAssertEquals;
 
 /**
  * Source: http://projecteuler.net/problem=6
@@ -23,15 +22,11 @@ public class SumSquareDifference
   @Test
   public void test()
   {
-    assertEquals( sumsquareDifference1( 10 ), 2640 );
-    measure( o -> sumsquareDifference1( 10 ) );
-    assertEquals( sumsquareDifference1( 100 ), 25164150 );
-    measure( o -> sumsquareDifference1( 100 ) );
+    measureAndAssertEquals( o -> sumsquareDifference1( 10 ), 2640 );
+    measureAndAssertEquals( o -> sumsquareDifference1( 100 ), 25164150 );
 
-    assertEquals( sumsquareDifference2( 10 ), 2640 );
-    measure( o -> sumsquareDifference2( 10 ) );
-    assertEquals( sumsquareDifference2( 100 ), 25164150 );
-    measure( o -> sumsquareDifference2( 100 ) );
+    measureAndAssertEquals( o -> sumsquareDifference2( 10 ), 2640 );
+    measureAndAssertEquals( o -> sumsquareDifference2( 100 ), 25164150 );
   }
 
   private int sumsquareDifference1( int upto )

@@ -1,12 +1,12 @@
 package projecteuler;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.function.IntPredicate;
 import java.util.stream.IntStream;
 
-import static test.Test.measure;
+import static org.testng.Assert.assertEquals;
+import static test.Test.measureAndAssertEquals;
 
 /**
  * Source: http://projecteuler.net/problem=1
@@ -19,14 +19,10 @@ public class SumOfMultiples
   @Test
   public void test()
   {
-    Assert.assertEquals( sumOfMultiples1( new int[]{ 3, 5 }, 1000 ), 233168 );
-    Assert.assertEquals( sumOfMultiples2( new int[]{ 3, 5 }, 1000 ), 233168 );
-    Assert.assertEquals( sumOfMultiples3( new int[]{ 3, 5 }, 1000 ), 233168 );
-    Assert.assertEquals( sumOfMultiples3( new int[]{ 2, 3 }, 10 ), 32 );
-
-    measure( o -> sumOfMultiples1( new int[]{ 3, 5 }, 10000000 ) );
-    measure( o -> sumOfMultiples2( new int[]{ 3, 5 }, 10000000 ) );
-    measure( o -> sumOfMultiples3( new int[]{ 3, 5 }, 10000000 ) );
+    measureAndAssertEquals( o -> sumOfMultiples1( new int[]{ 3, 5 }, 1000 ), 233168 );
+    measureAndAssertEquals( o -> sumOfMultiples2( new int[]{ 3, 5 }, 1000 ), 233168 );
+    measureAndAssertEquals( o -> sumOfMultiples3( new int[]{ 3, 5 }, 1000 ), 233168 );
+    assertEquals( sumOfMultiples3( new int[]{ 2, 3 }, 10 ), 32 );
   }
 
   private int sumOfMultiples1( int[] divisors, int upperLimit )

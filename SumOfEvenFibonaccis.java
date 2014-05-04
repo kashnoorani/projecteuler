@@ -1,13 +1,12 @@
 package projecteuler;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.util.function.LongPredicate;
 import java.util.stream.LongStream;
 
-import static test.Test.measure;
 import static java.lang.Math.*;
+import static test.Test.measureAndAssertEquals;
 
 /**
  * Source: http://projecteuler.net/problem=2
@@ -22,13 +21,11 @@ public class SumOfEvenFibonaccis
   @Test
   public void test()
   {
-    Assert.assertEquals( sumOfEvenFibonaccis1( 100 ), 44 );
-    Assert.assertEquals( sumOfEvenFibonaccis1( 4000000 ), 4613732 );
-    measure( o -> sumOfEvenFibonaccis1( 4000000 ) );
+    measureAndAssertEquals( o -> sumOfEvenFibonaccis1( 100 ), 44 );
+    measureAndAssertEquals( o -> sumOfEvenFibonaccis1( 4000000 ), 4613732 );
 
-    Assert.assertEquals( sumOfEvenFibonaccis2( 100 ), 44 );
-    Assert.assertEquals( sumOfEvenFibonaccis2( 4000000 ), 4613732 );
-    measure( o -> sumOfEvenFibonaccis2( 4000000 ) );
+    measureAndAssertEquals( o -> sumOfEvenFibonaccis2( 100 ), 44 );
+    measureAndAssertEquals( o -> sumOfEvenFibonaccis2( 4000000 ), 4613732 );
   }
 
   private long sumOfEvenFibonaccis1( long upperLimit )

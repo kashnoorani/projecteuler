@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 import java.util.function.Predicate;
 
 import static java.lang.String.valueOf;
-import static org.testng.Assert.assertEquals;
-import static test.Test.measure;
+import static test.Test.measureAndAssertEquals;
 
 /**
  * Source: http://projecteuler.net/problem=4
@@ -18,21 +17,18 @@ public class LargestPalindromeProduct
   @Test
   public void test()
   {
-    assertEquals( isPalindrome1( 9009 ), true );
-    assertEquals( isPalindrome1( 909 ), true );
-    assertEquals( isPalindrome1( 109 ), false );
-    assertEquals( isPalindrome1( 8888 ), true );
-    assertEquals( isPalindrome1( 2022 ), false );
-    assertEquals( isPalindrome2( 9009 ), true );
-    assertEquals( isPalindrome2( 909 ), true );
-    assertEquals( isPalindrome2( 109 ), false );
-    assertEquals( isPalindrome2( 8888 ), true );
-    assertEquals( isPalindrome2( 2022 ), false );
+    measureAndAssertEquals( o -> isPalindrome1( 9009 ), true );
+    measureAndAssertEquals( o -> isPalindrome1( 909 ), true );
+    measureAndAssertEquals( o -> isPalindrome1( 109 ), false );
+    measureAndAssertEquals( o -> isPalindrome1( 8888 ), true );
+    measureAndAssertEquals( o -> isPalindrome1( 2022 ), false );
+    measureAndAssertEquals( o -> isPalindrome2( 9009 ), true );
+    measureAndAssertEquals( o -> isPalindrome2( 909 ), true );
+    measureAndAssertEquals( o -> isPalindrome2( 109 ), false );
+    measureAndAssertEquals( o -> isPalindrome2( 8888 ), true );
+    measureAndAssertEquals( o -> isPalindrome2( 2022 ), false );
 
-    assertEquals( largestPalindrome1( this::isPalindrome1 ), 906609 );
-    measure( o -> largestPalindrome1( this::isPalindrome1 ) );
-    measure( o -> largestPalindrome1( this::isPalindrome2 ) );
-    measure( o -> largestPalindrome2() );
+    measureAndAssertEquals( o -> largestPalindrome1( this::isPalindrome1 ), 906609 );
   }
 
   private int largestPalindrome1( Predicate<Integer> comparator )

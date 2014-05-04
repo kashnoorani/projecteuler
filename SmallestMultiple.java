@@ -5,8 +5,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.testng.Assert.assertEquals;
-import static test.Test.measure;
+import static test.Test.measureAndAssertEquals;
 
 
 /**
@@ -19,12 +18,10 @@ public class SmallestMultiple
   @Test
   public void test()
   {
-    assertEquals( smallestMultiple1( 10 ), 2520 );
-    assertEquals( smallestMultiple1( 20 ), 232792560 );
-    measure( o -> smallestMultiple1( 20 ) );
-    assertEquals( smallestMultiple2( 10 ), 2520 );
-    assertEquals( smallestMultiple2( 20 ), 232792560 );
-    measure( o -> smallestMultiple2( 20 ) );
+    measureAndAssertEquals( o -> smallestMultiple1( 10 ), 2520 );
+    measureAndAssertEquals( o -> smallestMultiple1( 20 ), 232792560 );
+    measureAndAssertEquals( o -> smallestMultiple2( 10 ), 2520 );
+    measureAndAssertEquals( o -> smallestMultiple2( 20 ), 232792560 );
   }
 
   // brute force it

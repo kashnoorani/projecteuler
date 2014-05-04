@@ -7,8 +7,7 @@ import java.util.Deque;
 
 import static java.lang.Integer.parseInt;
 import static java.lang.String.valueOf;
-import static org.testng.Assert.assertEquals;
-import static test.Test.measure;
+import static test.Test.measureAndAssertEquals;
 
 /**
  * Source: http://projecteuler.net/problem=8
@@ -31,8 +30,7 @@ public class GreatestConsecutiveProduct
   @Test
   public void test()
   {
-    assertEquals( greatestConsecutiveProduct1( number, 5 ), 40824 );
-    measure( o -> greatestConsecutiveProduct1( number, 5 ) );
+    measureAndAssertEquals( O -> greatestConsecutiveProduct1( number, 5 ), 40824 );
   }
 
   private long greatestConsecutiveProduct1( String number, int length )
